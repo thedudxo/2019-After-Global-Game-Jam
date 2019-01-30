@@ -1,0 +1,44 @@
+THEME: what home means to you
+
+operating system home screen
+
+
+Google search sugestions - multiple choice dialog
+
+
+Setting: home alone, free time + nothing to worry about.
+Friday Evening (shown on computer clock?)
+Empty calendear with things crossed off
+List of creative things to do
+
+mood bar management?
+Flow state
+Too many windows open
+
+Window management/chaos
+Idea management
+Ideas pop up in a qeue and you have to sort them... good idea/bad, write it down/ do it. will otherwise be forgotten
+random notficiations / errors / chat messages must be dealt with.
+
+Memo/notepad app thing, or thought bubble is an idea queue. File menu 
+	> Write ideas down
+	> Delete idea
+	> Work on idea now
+	> Spam click the idea to increase its clarity
+Clarity decays quickly over time, then the idea will be lost
+Idea quality randomly generated 
+
+Word document if you "write down"
+	>Spam the keyboard to make progress
+	File Menu:
+	>Delete
+	>Save File (so you can start another
+	>open File (so you can choose to work on it)
+	>New file (progress will be lost warning dialog)
+
+Create the idea
+Draw a crappy MS paint image
+make a tune out of like 3 notes
+
+Upload the idea, takes time, enter metadata
+Get quality feedback based on time spent writing, creating, and how good the idea was in the first place
