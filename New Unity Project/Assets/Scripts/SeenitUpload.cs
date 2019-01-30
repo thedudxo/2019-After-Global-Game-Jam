@@ -29,6 +29,10 @@ public class SeenitUpload : MonoBehaviour
 
     public void Upload()
     {
+        RecentFile file = RecentFiles.instance.selectedFile;
+        if (file == null || file.text.text == "Empty") { return; }
+        file.Delete();
+        RecentFiles.instance.DeseletAll();
         uploading = true;
     }
 }

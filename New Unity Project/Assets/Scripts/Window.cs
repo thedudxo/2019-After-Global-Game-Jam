@@ -58,4 +58,7 @@ public class Window : MonoBehaviour {
         randomPos();
     }
 
+ 
+
+
 }

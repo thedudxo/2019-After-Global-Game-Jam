@@ -40,4 +40,20 @@ public class Painting : MonoBehaviour
 
         }
     }
+
+    public void Save()
+    {
+        RecentFile file = RecentFiles.instance.selectedFile;
+        file.ChangeName("Painting");
+        file.stage = stage;
+    }
+
+    public void Delete()
+    {
+        stages[stage].SetActive(false);
+        stage = 0;
+        clicks = 0;
+        clicksPerStage = 2;
+        stages[stage].SetActive(true);
+    }
 }
