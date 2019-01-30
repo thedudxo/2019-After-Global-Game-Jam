@@ -5,7 +5,7 @@ using UnityEngine;
 public class Window : MonoBehaviour { 
 
     float randomCloseDelay = 1f;
-    float randomSpawnRange = 200f;
+    float randomSpawnRange = 150f;
 
     public GameObject onScreenWindow;
     public GameObject onTaskbarWindow;

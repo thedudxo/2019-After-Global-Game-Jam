@@ -5,9 +5,10 @@ using UnityEngine;
 public class Painting : MonoBehaviour
 {
 
-    int clicksPerStage = 2;
+    float clicksPerStage = 2;
     int clicks;
-    int stage;
+    int stage = 0;
+    bool done = false;
 
     public List<GameObject> stages;
 
@@ -26,6 +27,8 @@ public class Painting : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log(stages.Count + "" + stage);
+        if(stage + 1 == stages.Count) { done = true;  return; }
         clicks++;
         if (clicks >= clicksPerStage)
         {
@@ -33,7 +36,7 @@ public class Painting : MonoBehaviour
             stage++;
             stages[stage].SetActive(true);
             clicks = 0;
-            clicksPerStage += 1;
+            clicksPerStage += 0.5f;
 
         }
     }

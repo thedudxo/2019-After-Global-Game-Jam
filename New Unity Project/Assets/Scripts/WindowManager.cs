@@ -11,8 +11,6 @@ public class WindowManager : MonoBehaviour
     float spacing = 0.2f;
     List<Window> windows;
 
-    public GameObject testWindow;
-    public GameObject testBar;
 
 
     // Start is called before the first frame update
