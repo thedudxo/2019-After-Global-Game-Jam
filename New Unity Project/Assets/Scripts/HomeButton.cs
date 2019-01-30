@@ -5,6 +5,7 @@ using UnityEngine;
 public class HomeButton : MonoBehaviour { 
 
     public GameObject homeWindow;
+    public GameObject paint;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,10 @@ public class HomeButton : MonoBehaviour {
     public void OpenHome()
     {
         homeWindow.SetActive(!homeWindow.activeInHierarchy);
+    }
+
+    public void OpenPaint()
+    {
+        Instantiate(paint, gameObject.transform);
     }
 }

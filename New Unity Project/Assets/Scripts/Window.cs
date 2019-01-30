@@ -4,12 +4,31 @@ using UnityEngine;
 
 public class Window : MonoBehaviour { 
 
-    public float randomCloseDelay = 1f;
+    float randomCloseDelay = 1f;
+    float randomSpawnRange = 200f;
+
+    public GameObject onScreenWindow;
+    public GameObject onTaskbarWindow;
+    public int windowNumber = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (WindowManager.instance.addWindow(this))
+        {
+            randomPos();
+        }
+        else { Destroy(gameObject); }
+    }
+
+    void randomPos()
+    {
+        float range = randomSpawnRange / 2;
+
+        onScreenWindow.transform.position = new Vector3(
+            onScreenWindow.transform.position.x + Random.Range(-range, range),
+            onScreenWindow.transform.position.y + Random.Range(-range, range),
+            onScreenWindow.transform.position.z);
     }
 
     // Update is called once per frame
@@ -18,19 +37,25 @@ public class Window : MonoBehaviour {
 
     }
 
-    private void OnMouseDrag()
-    {
-            gameObject.transform.position = Input.mousePosition;
-
-    }
-
     public void closeWindow()
     {
-        Destroy(gameObject, Random.Range(0.1f,randomCloseDelay));
+        WindowManager.instance.RemoveWindow(this);
+        Destroy(gameObject, Random.Range(0,randomCloseDelay));
     }
 
-    public void dropDownMenu()
+    public void Minimise()
     {
-
+        onScreenWindow.SetActive(false);
+        onTaskbarWindow.SetActive(true);
+        WindowManager.instance.MinimiseWindow(this);
     }
+
+    public void Maximise()
+    {
+        onTaskbarWindow.SetActive(false);
+        onScreenWindow.SetActive(true);
+        WindowManager.instance.MaximiseWindow(this);
+        randomPos();
+    }
+
 }

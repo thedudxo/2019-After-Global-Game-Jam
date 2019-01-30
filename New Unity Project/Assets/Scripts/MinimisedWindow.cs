@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DragWindow : MonoBehaviour
+public class MinimisedWindow : MonoBehaviour
 {
-
-    public GameObject window;
+    public int position;
+    public Window window;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +19,5 @@ public class DragWindow : MonoBehaviour
         
     }
 
-    private void OnMouseDrag()
-    {
-        window.transform.position = Input.mousePosition;
-
-    }
+   
 }
