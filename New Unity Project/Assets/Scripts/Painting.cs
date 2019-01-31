@@ -9,6 +9,8 @@ public class Painting : MonoBehaviour
     int clicks;
     int stage = 0;
     bool done = false;
+    public UnityEngine.UI.Text qualityText;
+    int ideaQuality = 0;
 
     public List<GameObject> stages;
 
@@ -27,7 +29,6 @@ public class Painting : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log(stages.Count + "" + stage);
         if(stage + 1 == stages.Count) { done = true;  return; }
         clicks++;
         if (clicks >= clicksPerStage)
@@ -45,7 +46,7 @@ public class Painting : MonoBehaviour
     {
         RecentFile file = RecentFiles.instance.selectedFile;
         file.ChangeName("Painting");
-        file.stage = stage;
+        file.stage = (stage + ideaQuality) / 2;
     }
 
     public void Delete()
@@ -55,5 +56,13 @@ public class Painting : MonoBehaviour
         clicks = 0;
         clicksPerStage = 2;
         stages[stage].SetActive(true);
+    }
+
+    public void loadIdea()
+    {
+        Delete();
+        ideaQuality = RecentFiles.instance.selectedFile.qualityValue;
+        RecentFiles.instance.selectedFile.Delete();
+        qualityText.text = HomeButton.instance.qualitys[ideaQuality];
     }
 }

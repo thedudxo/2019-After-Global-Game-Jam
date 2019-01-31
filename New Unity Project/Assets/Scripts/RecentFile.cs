@@ -12,6 +12,7 @@ public class RecentFile : MonoBehaviour
     //save
     public Text text;
     public int stage = 0;
+    public int qualityValue;
 
     // Start is called before the first frame update
     void Start()
@@ -52,5 +53,6 @@ public class RecentFile : MonoBehaviour
     {
         ChangeName("Empty");
         stage = 0;
+        qualityValue = 0;
     }
 }
